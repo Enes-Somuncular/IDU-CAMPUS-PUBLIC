@@ -1,21 +1,21 @@
-MIT License
+TELİF HAKKI VE KULLANIM ŞARTLARI / PROPRIETARY LICENSE
+Tüm Hakları Saklıdır (All Rights Reserved)
 
-Copyright (c) 2026 IDU Campus Project Contributors
+Copyright (c) 2026 IDU Campus Contributors
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Bu yazılım, arayüz tasarımları, veri modelleri ve ilgili tüm dokümantasyon ("Yazılım") koruma altındadır ve açık kaynaklı değildir.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. MÜLKİYET VE HAKLAR:
+Bu Yazılımın tüm fikri mülkiyet hakları, telif hakları, kaynak kodları, görsel tasarımları ve ticari hakları münhasıran proje sahiplerine ("IDU Campus Contributors") aittir. 
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. KULLANIM VE KOPYALAMA KISITLAMALARI:
+Proje sahiplerinin önceden yazılı izni olmaksızın; bu Yazılımın veya herhangi bir parçasının kaynak kodunun kopyalanması, değiştirilmesi, tersine mühendisliğe tabi tutulması, parçalanması, yeniden dağıtılması, kiralanması, satılması, alt lisanslanması veya benzeri bir ticari/gayriticari projenin temeli olarak kullanılması kesinlikle yasaktır.
+
+3. BAĞIMSIZ PROJE VE RESMÎ BİLGİ BEYANI:
+İDÜ Campus, bağımsız bir öğrenci girişimidir; İzmir Demokrasi Üniversitesi'nin resmî bir platformu veya idari sistemi değildir. Kullanıcılar ders saatleri, sınav tarihleri, amfi bilgileri ve devamsızlık durumlarına ilişkin nihai doğrulamayı her zaman üniversitenin resmî bültenlerinden, dekanlık duyurularından ve öğrenci bilgi sisteminden yapmakla yükümlüdür.
+
+4. HİÇBİR GARANTİ VERİLMEZ (AS-IS):
+BU YAZILIM "OLDUĞU GİBİ" (AS IS) VE "MEVCUT OLDUĞU KADARIYLA" SUNULMAKTADIR. YAZILIMIN KESİNTİSİZ, HATASIZ, EKSİKSİZ VEYA GÜNCEL ÇALIŞACAĞINA DAİR AÇIK VEYA ZIMNİ HİÇBİR GARANTİ VERİLMEMEKTEDİR. DERS PROGRAMINDAKİ DEĞİŞİKLİKLERİN GECİKMESİ, KAYNAK VERİ HATALARI VEYA SİSTEM KESİNTİLERİ GARANTİ KAPSAMI DIŞINDADIR.
+
+5. SORUMLULUK REDDİ VE SINIRLAMASI (LIMITATION OF LIABILITY):
+HİÇBİR DURUMDA VE HİÇBİR HUKUKİ ŞART ALTINDA, YAZILIMIN GELİŞTİRİCİLERİ, SAHİPLERİ VEYA KATKIDA BULUNANLARI; BU YAZILIMIN KULLANIMINDAN, KULLANILAMAMASINDAN, YAZILIMDAKİ BİLGİLERE GÜVENİLEREK YAPILAN EYLEMLERDEN, DEVAMSIZLIK AŞIMLARINDAN, KAÇIRILAN DERS VEYA SINAVLARDAN, VERİ KAYIPLARINDAN YA DA DOĞRUDAN/DOLAYLI, MADDİ/MANEVİ HİÇBİR ZARARDAN DOLAYI SORUMLU TUTULAMAZ. TÜM KULLANIM RİSKİ KULLANICIYA AİTTİR.

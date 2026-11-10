@@ -8,7 +8,7 @@
 
   [![Canlı Uygulama](https://img.shields.io/badge/Canlı%20Site-idu--campus.pages.dev-0284c7?style=for-the-badge&logo=cloudflarepages&logoColor=white)](https://idu-campus.pages.dev/)
   [![Sürüm](https://img.shields.io/badge/Sürüm-v1.8.3-10b981?style=for-the-badge)](CHANGELOG.md)
-  [![Lisans](https://img.shields.io/badge/Lisans-MIT-6366f1?style=for-the-badge)](LICENSE)
+  [![Lisans](https://img.shields.io/badge/Lisans-Telif%20Hakkı%20Saklıdır-dc2626?style=for-the-badge)](LICENSE)
   [![Mimari](https://img.shields.io/badge/Mimari-Vanilla%20JS%20%7C%20PWA-f59e0b?style=for-the-badge)](docs/ARCHITECTURE.md)
   [![Gizlilik](https://img.shields.io/badge/Gizlilik-Sıfır%20Kişisel%20Veri-ec4899?style=for-the-badge)](docs/PRIVACY.md)
 
@@ -222,16 +222,24 @@ Detaylı planlama için [ROADMAP.md](ROADMAP.md) dosyasına göz atabilirsiniz.
 
 ---
 
-## 🤝 Katkıda Bulunma ve İletişim
+## ⚖️ Telif Hakları ve Hukuki Sorumluluk Reddi (Disclaimer)
 
-İDÜ Campus tamamen açık fikirli, şeffaf ve topluluk odaklı bir projedir:
-- Bir hata mı buldunuz? Doğrudan canlı sitedeki **"Geri Bildirim"** butonundan anonim bildirimde bulunabilirsiniz.
-- Açık kaynak katkısı sunmak veya geliştirme sürecine katılmak için [CONTRIBUTING.md](CONTRIBUTING.md) rehberine göz atabilirsiniz.
+* **Mülkiyet:** İDÜ Campus'un tüm hakları saklıdır (All Rights Reserved). Uygulamanın kaynak kodları, görsel tasarımları ve veri modelleri izinsiz kopyalanamaz, çoğaltılamaz ve dağıtılamaz.
+* **Bağımsız Girişim:** İDÜ Campus bağımsız bir öğrenci girişimidir; İzmir Demokrasi Üniversitesi'nin resmî idari sistemi değildir.
+* **Sorumluluk Reddi:** Yazılım "olduğu gibi" (AS IS) sağlanmaktadır. Uygulamadaki ders saatleri, sınavlar veya devamsızlık hesaplamalarındaki olası gecikme, hata ya da uyuşmazlıklardan; kaçırılan ders ve sınavlardan ya da devamsızlık aşımından dolayı geliştiriciler hiçbir şekilde hukuki veya maddi olarak sorumlu tutulamaz. Nihai doğrulama yükümlülüğü her zaman öğrenciye aittir.
+
+---
+
+## 🤝 Geri Bildirim ve İletişim
+
+İDÜ Campus topluluk odaklı bir vizyonla yürütülmektedir:
+- Bir program hatası veya teknik problem mi fark ettiniz? Canlı sitedeki **"Geri Bildirim"** bölümünden anonim olarak iletebilirsiniz.
+- Öneri ve destek süreçleri hakkında detaylar için [CONTRIBUTING.md](CONTRIBUTING.md) ve [docs/PRIVACY.md](docs/PRIVACY.md) belgelerini inceleyebilirsiniz.
 
 ---
 
 <div align="center">
   <sub>İzmir Demokrasi Üniversitesi Tıp Fakültesi Öğrencileri Tarafından Sevgi ve Özenle Geliştirildi. ❤️</sub>
   <br>
-  <sub>Bağımsız bir öğrenci projesidir; üniversitenin resmî platformu değildir.</sub>
+  <sub>Tüm Hakları Saklıdır © 2026 IDU Campus Contributors.</sub>
 </div>
