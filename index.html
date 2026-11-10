@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İDÜ Campus — Tıp Akademik Ajandası (Açık Tanıtım Vitrini)</title>
+  <meta name="description" content="İzmir Demokrasi Üniversitesi Tıp Fakültesi öğrencileri için geliştirilen yeni nesil, sıfır bağımlılıklı, gizlilik odaklı PWA ders ajandası ve devamsızlık takip asistanı.">
+  <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(22, 28, 45, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --primary: #0ea5e9;
+      --primary-hover: #0284c7;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --radius: 16px;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(99, 102, 241, 0.12) 0%, transparent 45%);
+      background-attachment: fixed;
+      padding-bottom: 5rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #7dd3fc;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER */
+    header {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11, 15, 25, 0.85);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text);
+    }
+
+    .brand img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--card-border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 4.5rem 0 3rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* SCREENSHOTS SHOWCASE */
+    .showcase {
+      margin: 3rem 0;
+    }
+
+    .preview-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .preview-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: block;
+    }
+
+    .preview-info {
+      padding: 1rem;
+    }
+
+    .preview-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #fff;
+    }
+
+    .preview-info p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .feature-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* FEATURES GRID */
+    .section-title {
+      text-align: center;
+      margin: 4.5rem 0 2rem;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      padding: 0.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.6rem;
+      color: #fff;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      margin: 3rem 0;
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--card-border);
+    }
+
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.6rem;
+      top: 0.2rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .timeline-version {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* INSTALL STEPS */
+    .install-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 3rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .install-col h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+    }
+
+    .install-col ol {
+      padding-left: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .install-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 5rem;
+      text-align: center;
+      border-top: 1px solid var(--card-border);
+      padding: 3rem 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .preview-card {
+        grid-template-columns: 1fr;
+      }
+      .install-box {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+      <div class="brand">
+        <img src="assets/images/logo.svg" alt="İDÜ Campus Logo">
+        <span>İDÜ Campus</span>
+      </div>
+      <div class="header-actions">
+        <a href="https://idu-campus.pages.dev/" target="_blank" rel="noopener" class="btn btn-primary">
+          <span>Canlı Ajandayı Aç</span> ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-badge">
+        <span>✨ v1.8.3 Yayında · Sıfır Kişisel Veri & Bulut Eşitleme</span>
+      </div>
+      <h1>Tıp Fakültesi İçin<br><span>Yeni Nesil Akademik Ajanda</span></h1>
+      <p>
+        Resmî ve karmaşık Excel tablolarında ders aramaya son. İzmir Demokrasi Üniversitesi Tıp 1. Sınıf için tasarlanan, devamsızlık barajını kuruşu kuruşuna hesaplayan, ders ertelemelerine uyum sağlayan ve çevrimdışı çalışan akıllı kampüs asistanı.
+      </p>
+      <div class="hero-cta">
+        <a href="https://idu-campus.pages.dev/" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.8rem 1.8rem; font-size:1.05rem">
+          🚀 Canlı Uygulamayı Dene
+        </a>
+        <a href="README.md" class="btn btn-secondary" style="padding:0.8rem 1.8rem; font-size:1.05rem">
+          📖 Dokümantasyonu İncele
+        </a>
+      </div>
+    </section>
+
+    <!-- SHOWCASE PREVIEW CARDS -->
+    <section class="showcase">
+      <div class="preview-card">
+        <img src="assets/images/preview-desktop.jpg" alt="Masaüstü Görünümü" class="preview-img">
+        <div class="preview-info">
+          <h3>Masaüstünde Kesintisiz Akış</h3>
+          <p>Yatay zaman akışı, anabilim dallarına özel renkler, komite sınavı geri sayımı ve ders saati çakışma uyarıları tek ekranda.</p>
+          <div class="feature-tags">
+            <span class="feature-tag">Yatay Zaman Tüneli</span>
+            <span class="feature-tag">Canlı Saat Çizgisi</span>
+            <span class="feature-tag">Grup A/B/C/D</span>
+            <span class="feature-tag">Koyu/Açık Tema</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY FEATURES -->
+    <section>
+      <div class="section-title">
+        <h2>Öne Çıkan Süper Yetenekler</h2>
+        <p>Tıp öğrencilerinin amfilerde ve laboratuvarlarda bizzat yaşadığı zorluklar düşünülerek tasarlandı.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <span class="feature-icon">📌</span>
+          <h3>Kişisel Ders Taşıma (Raptiye)</h3>
+          <p>Hoca kararıyla veya sınıfça ertelenen dersleri takvimde dilediğin güne/saate taşı! 3D raptiye ve kıvrık kağıt görünümüyle ertelemeleri asla kaçırma.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <span class="feature-icon">📊</span>
+          <h3>Tıp Devam Barajı Analitiği</h3>
+          <p>Tıp yönetmeliğine uygun %30 Teorik ve %20 Pratik baraj hesabı. Kalan devamsızlık hakkını ve kritik risk uyarılarını anbean takip et.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <span class="feature-icon">🔒</span>
+          <h3>Sıfır Kişisel Veri & Bulut</h3>
+          <p>E-posta yok, telefon yok. Yalnızca dilediğin kullanıcı adı ve sistemin ürettiği 4 haneli PIN ile oturum aç. 400ms hızında Cloudflare D1 senkronizasyonu.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature-card">
+          <span class="feature-icon">⚡</span>
+          <h3>Offline-First PWA Mimarisi</h3>
+          <p>Amfilerde internet çekmediğinde bile son açılan program saniyede açılır. Sıfır dış kütüphane bağımlılığı ve 150 KB'ın altında ultra hafif mimari.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="feature-card">
+          <span class="feature-icon">⏳</span>
+          <h3>Komite Sınavı & Soru Dağılımı</h3>
+          <p>Aktif komite sınavına kaç gün kaldığını, komitedeki toplam teorik/pratik saatlerini ve anabilim dallarının soru ağırlıklarını tek bakışta gör.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="feature-card">
+          <span class="feature-icon">💬</span>
+          <h3>Anonim Geri Bildirim Biletleri</h3>
+          <p>Bir hata veya öneri bildirdiğinde sana özel üretilen takip koduyla yöneticinin inceleme durumunu ve yanıtını canlı takip et.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PWA INSTALL GUIDE -->
+    <section>
+      <div class="section-title">
+        <h2>📱 Telefonuna Nasıl Yüklersin?</h2>
+        <p>App Store veya Play Store'a gerek duymadan, saniyeler içinde ana ekranına ekle.</p>
+      </div>
+
+      <div class="install-box">
+        <div class="install-col">
+          <h4>🍏 iPhone & iPad (Safari)</h4>
+          <ol>
+            <li>Safari tarayıcısında <strong>idu-campus.pages.dev</strong> adresini aç.</li>
+            <li>Alttaki <strong>Paylaş</strong> simgesine dokun.</li>
+            <li>Aşağı kaydırıp <strong>"Ana Ekrana Ekle"</strong> seçeneğini seç.</li>
+            <li>Sağ üstteki <strong>Ekle</strong> butonuna bas. Hazır!</li>
+          </ol>
+        </div>
+        <div class="install-col">
+          <h4>🤖 Android (Google Chrome)</h4>
+          <ol>
+            <li>Chrome'da <strong>idu-campus.pages.dev</strong> adresine gir.</li>
+            <li>Sağ üstteki <strong>üç nokta (⋮)</strong> menüsüne dokun.</li>
+            <li><strong>"Uygulamayı Yükle"</strong> veya <strong>"Ana Ekrana Ekle"</strong>ye bas.</li>
+            <li>Onayla. Uygulama bağımsız tam ekran çalışacaktır.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- SÜRÜM EVRİMİ -->
+    <section>
+      <div class="section-title">
+        <h2>📈 Gelişim Yolculuğumuz</h2>
+        <p>v1.0.0 prototipinden v1.8.3 canlı senkronizasyon aşamasına kadar adımlarımız.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-version">v1.8.3 · Hızlı Bulut & Sayfa Yenileme Koruması</div>
+          <div class="timeline-desc">400ms ultra hızlı Cloudflare D1 senkronizasyonu, F5 sekme kapatma koruması ve anlık bulut durum rozetleri.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-version">v1.8.0 · Öğrenci Hesapları & Ders Taşıma (Raptiye)</div>
+          <div class="timeline-desc">Sıfır kişisel veri modeli ile PIN tabanlı hesaplar, tıp temalı avatarlar ve çakışma kontrollü ders erteleme sistemi.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-version">v1.7.1 · Yoklama Takibi & Komite Analizi</div>
+          <div class="timeline-desc">Tek dokunuşla Var/Yok/İptal işaretleme, %30/%20 tıp devamsızlık barajı ve sınav geri sayım paneli.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-version">v1.6.0 · Akış (Flow) Tasarımı</div>
+          <div class="timeline-desc">Yatay zaman akışı, canlı saat çizgisi, mobil gün seçici ve ortak tasarım yüzeyi.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-version">v1.0.0 · İlk Kararlı Sürüm</div>
+          <div class="timeline-desc">Fakülte Excel dosyasından otomatik takvim üretimi, A/B/C/D filtreleri ve açık/koyu tema desteği.</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://idu-campus.pages.dev/" target="_blank" rel="noopener">Canlı Site</a>
+        <a href="README.md">README</a>
+        <a href="CHANGELOG.md">Sürüm Günlüğü</a>
+        <a href="ROADMAP.md">Yol Haritası</a>
+        <a href="docs/ARCHITECTURE.md">Mimari</a>
+        <a href="docs/PRIVACY.md">Gizlilik</a>
+      </div>
+      <p>
+        İDÜ Campus bağımsız bir öğrenci projesidir.<br>
+        Ders, sınav ve değişiklik bilgilerini her zaman üniversitenin resmî kaynaklarından doğrulayınız.
+      </p>
+      <p style="margin-top:0.5rem; opacity:0.7">
+        Tıp Fakültesi Öğrencileri Tarafından Sevgi ve Özenle Geliştirildi. ❤️
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
