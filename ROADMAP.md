@@ -6,15 +6,16 @@ Bu belge, İDÜ Campus projesinin geçmişten bugüne katettiği mesafeyi, şu a
 
 ## 📌 Mevcut Durum Özeti (Kasım 2026 İtibarıyla)
 
-* **Aktif Canlı Sürüm:** `v1.8.3`
+* **Aktif Canlı Sürüm:** `v1.8.6`
 * **Canlı Dağıtım Adresi:** [idu-campus.pages.dev](https://idu-campus.pages.dev/)
 * **Platform:** Web / PWA (iOS & Android Ana Ekran Desteği)
 * **Kapsam:** İzmir Demokrasi Üniversitesi Tıp Fakültesi (İngilizce Tıp 1. Sınıf)
 * **Temel Başarılar:** 
-  - Sıfır kişisel veri ile çalışan öğrenci hesapları ve 400ms bulut senkronizasyonu devrede.
-  - Tıp Fakültesi resmi devam barajı (%30 Teorik / %20 Pratik) entegre edildi.
+  - İsteğe bağlı profil ve yoklama tarayıcıda saklanır. TXT yedeği yüklemeden önce değişiklikler gösterilir.
+  - Komite ve yıl sonu devamsızlık tahminleri ayrı gösterilir.
   - Ders taşıma / raptiyeleme özelliğiyle hoca ertelemelerine tam uyum sağlandı.
-  - İnternetsiz amfilerde Service Worker ile %100 çevrimdışı çalışma kabiliyeti kazanıldı.
+  - Kaydedilmiş ders programı çevrimdışı açılabilir. Uygulama otomatik güncellenir ve elle güncelleme kontrolü sunar.
+  - Takvimde son kaynak kontrolü ve Yemekhane sayfasında günün menüsü görünür.
 
 ---
 
@@ -44,8 +45,11 @@ Bu belge, İDÜ Campus projesinin geçmişten bugüne katettiği mesafeyi, şu a
 - [x] Komitedeki derslerin soru ağırlık dağılım analitiği.
 - [x] Muafiyet (dikkate alınmayan) ders seçimi.
 
-### ✅ Faz 4: Öğrenci Hesapları, Bulut Senkronizasyonu & Ders Taşıma (v1.8.0 - v1.8.3)
-- [x] **Sıfır Kişisel Veri Politikası:** E-posta veya telefon gerekmeden dilediğin `@kullanici` adı ve 4 haneli PIN ile oturum açma.
+### ✅ Faz 4: Ders Taşıma ve Eski Hesap Sistemi (v1.8.0 - v1.8.3)
+
+Hesap, PIN ve bulut eşitleme v1.8.5 ile kapatıldı. Kişisel ders taşıma cihazda çalışmaya devam ediyor.
+
+- [x] **Önceki hesap sistemi:** E-posta veya telefon gerekmeden dilediğin `@kullanici` adı ve 4 haneli PIN ile oturum açma.
 - [x] Tıp temalı profil avatarları (Stetoskop, Genetik, Mikroskop, Nöroloji, Klinik vb.).
 - [x] **Kişisel Ders Taşıma (Raptiye):** Ertelenen veya saati değişen dersleri takvimde başka güne/saate taşıma ve özel not iliştirme.
 - [x] 3D raptiye ve kıvrık kağıt görsel tasarımı; ders saati çakışma uyarıları.
@@ -60,7 +64,7 @@ Bu belge, İDÜ Campus projesinin geçmişten bugüne katettiği mesafeyi, şu a
 
 ```mermaid
 flowchart LR
-    F4["✅ Faz 4: Bulut & Hesaplar\n(Tamamlandı - v1.8.3)"] --> F5["⏳ Faz 5: Duyuru Akışı\n(Planlanıyor)"]
+    F4["✅ Cihaz içi profil ve yedek\n(Yayında - v1.8.6)"] --> F5["⏳ Faz 5: Duyuru Akışı\n(Planlanıyor)"]
     F5 --> F6["🔮 Faz 6: Takvim Entegrasyonu\n(.ics / Google / Apple)"]
     F6 --> F7["🌐 Faz 7: Çoklu Dönem Desteği\n(Dönem 2, 3...)"]
 ```
@@ -89,4 +93,4 @@ flowchart LR
 
 ## 💬 Fikirler ve Öneriler
 
-Bu yol haritası statik değildir; sınıftaki ve fakültedeki öğrencilerin taleplerine göre şekillenir. Yeni bir özellik talep etmek veya oy vermek için canlı sitedeki **"Geri Bildirim"** bölümünü kullanabilirsiniz!
+Bu yol haritası statik değildir; sınıftaki ve fakültedeki öğrencilerin taleplerine göre şekillenir. Yeni bir özellik önermek için canlı sitedeki **Geri bildirim** bölümünde gösterilen e-posta adresine yazabilirsin.

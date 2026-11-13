@@ -6,6 +6,24 @@ Format [Keep a Changelog](https://keepachangelog.com/tr/1.0.0/) standartlarına 
 
 ---
 
+## [1.8.6]
+
+- Yoklama değişiklikleri aynı tarayıcıdaki sekmeler arasında güncellenir. Toplu işaretleme yalnızca boş kayıtları doldurur.
+- TXT yedeğini yüklemeden önce değişikliklerin özeti gösterilir.
+- Komite ve yıl sonu devamsızlık tahminleri ayrı görünür. Takvimde son kaynak kontrolü ve eksik satır sayısı gösterilir.
+- Günlük görünümde sıradaki ders ve yemek özeti, Yemekhane sayfasında ise bugünün menüsü öne çıkar.
+- Yeni uygulama sürümü hazır olduğunda otomatik uygulanır. **Güncelle** düğmesi elle kontrol başlatır.
+
+---
+
+## [1.8.5]
+
+- Hesap, PIN ve bulut eşitleme kapatıldı. İsteğe bağlı cihaz içi kullanıcı adı ve TXT yedek kullanılabilir.
+- Yeni geri bildirimler için kopyalanabilir e-posta adresi gösterilir.
+- Kasım 2026 Yemekhane menüsü eklendi.
+
+---
+
 ## [1.8.3] - 2026-11-10
 
 ### 🚀 Eklendi & İyileştirildi
